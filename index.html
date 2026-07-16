@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso Intensivo · Network Marketing Herbalife · @alangrowth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0c;
+    --bg-alt:#151310;
+    --bg-card:#1a1712;
+    --gold:#c9a227;
+    --gold-light:#e8c766;
+    --cream:#f3ede0;
+    --muted:#a89a7a;
+    --bronze:#4d3f24;
+    --line: rgba(201,162,39,0.25);
+    --radius: 2px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--cream);
+    font-family:'Manrope', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  ::selection{ background:var(--gold); color:#0b0b0c; }
+
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    color:var(--cream);
+  }
+  .eyebrow{
+    font-family:'Manrope', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:0.72rem;
+    font-weight:700;
+    color:var(--gold);
+  }
+  a{ color:inherit; text-decoration:none; }
+  img{max-width:100%; display:block;}
+
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 24px; }
+  section{ position:relative; padding:96px 0; }
+  .divider{
+    height:1px;
+    background:linear-gradient(90deg, transparent, var(--line) 20%, var(--line) 80%, transparent);
+    width:100%;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,11,12,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 24px;
+  }
+  .brand{ font-family:'Fraunces', serif; font-weight:600; font-size:1.1rem; letter-spacing:0.02em; }
+  .brand span{ color:var(--gold); }
+  .nav-cta{
+    background:var(--gold);
+    color:#0b0b0c;
+    font-weight:700;
+    font-size:0.82rem;
+    padding:10px 22px;
+    border-radius:var(--radius);
+    letter-spacing:0.02em;
+    transition:background .25s ease, transform .25s ease;
+  }
+  .nav-cta:hover{ background:var(--gold-light); transform:translateY(-1px); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding-top:110px;
+    padding-bottom:80px;
+    text-align:center;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201,162,39,0.16), transparent);
+  }
+  .hero .eyebrow{ display:block; margin-bottom:22px; }
+  .hero h1{
+    font-size:clamp(2.2rem, 5vw, 3.6rem);
+    line-height:1.12;
+    max-width:820px;
+    margin:0 auto 24px;
+  }
+  .hero h1 em{ font-style:italic; color:var(--gold-light); font-weight:400; }
+  .hero p.sub{
+    max-width:560px;
+    margin:0 auto 40px;
+    color:var(--muted);
+    font-size:1.08rem;
+  }
+  .hero-badges{
+    display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-bottom:44px;
+  }
+  .badge{
+    border:1px solid var(--line);
+    padding:9px 18px;
+    border-radius:100px;
+    font-size:0.82rem;
+    color:var(--muted);
+    display:flex; align-items:center; gap:8px;
+  }
+  .badge b{ color:var(--gold-light); font-weight:700; }
+  .dot{ width:6px; height:6px; border-radius:50%; background:var(--gold); }
+
+  .btn-primary{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--gold);
+    color:#0b0b0c;
+    font-weight:800;
+    font-size:0.98rem;
+    padding:18px 38px;
+    border-radius:var(--radius);
+    border:none;
+    cursor:pointer;
+    transition:background .25s ease, transform .25s ease, box-shadow .25s ease;
+    box-shadow:0 0 0 rgba(201,162,39,0);
+  }
+  .btn-primary:hover{
+    background:var(--gold-light);
+    transform:translateY(-2px);
+    box-shadow:0 12px 28px -8px rgba(201,162,39,0.55);
+  }
+  .btn-secondary{
+    display:inline-block;
+    border:1px solid var(--line);
+    color:var(--cream);
+    font-weight:600;
+    font-size:0.9rem;
+    padding:16px 30px;
+    border-radius:var(--radius);
+    transition:border-color .25s ease, background .25s ease;
+  }
+  .btn-secondary:hover{ border-color:var(--gold); background:rgba(201,162,39,0.06); }
+  .hero-actions{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+  .hero-note{ margin-top:18px; font-size:0.78rem; color:var(--muted); }
+
+  /* ---------- PAIN ---------- */
+  .pain{ background:var(--bg-alt); }
+  .pain .grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;
+  }
+  .pain blockquote{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:clamp(1.3rem, 2.4vw, 1.7rem);
+    line-height:1.5;
+    color:var(--gold-light);
+    border-left:2px solid var(--gold);
+    padding-left:28px;
+  }
+  .pain .copy p{ color:var(--muted); margin-top:16px; }
+  .pain .copy p:first-child{ margin-top:0; }
+
+  /* ---------- AGENDA ---------- */
+  .section-head{ text-align:center; max-width:600px; margin:0 auto 64px; }
+  .section-head h2{ font-size:clamp(1.8rem, 3.6vw, 2.5rem); margin-top:16px; }
+  .section-head p{ color:var(--muted); margin-top:14px; }
+
+  .agenda-item{
+    display:grid;
+    grid-template-columns:90px 1fr;
+    gap:28px;
+    padding:32px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .agenda-item:last-child{ border-bottom:none; }
+  .agenda-num{
+    font-family:'Fraunces', serif;
+    font-size:2.6rem;
+    font-weight:300;
+    color:var(--gold);
+    line-height:1;
+  }
+  .agenda-body h3{ font-size:1.25rem; margin-bottom:8px; }
+  .agenda-body p{ color:var(--muted); font-size:0.95rem; }
+
+  /* ---------- INCLUYE ---------- */
+  .incluye{ background:var(--bg-alt); }
+  .incluye-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .incluye-card{
+    background:var(--bg-alt);
+    padding:32px 26px;
+    text-align:left;
+  }
+  .incluye-card .eyebrow{ display:block; margin-bottom:10px; font-size:0.66rem; }
+  .incluye-card h3{ font-size:1.02rem; font-weight:600; font-family:'Manrope',sans-serif; }
+  .incluye-card p{ color:var(--muted); font-size:0.85rem; margin-top:6px; }
+
+  /* ---------- TESTIMONIOS ---------- */
+  .testi-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  .testi-card{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    padding:34px;
+    border-radius:var(--radius);
+    position:relative;
+  }
+  .testi-card::before{
+    content:'"';
+    font-family:'Fraunces', serif;
+    font-size:3.4rem;
+    color:var(--gold);
+    opacity:0.5;
+    position:absolute;
+    top:8px; left:20px;
+    line-height:1;
+  }
+  .testi-text{ font-size:1.02rem; color:var(--cream); margin-top:26px; }
+  .testi-name{ margin-top:20px; font-size:0.85rem; color:var(--gold-light); font-weight:700; letter-spacing:0.02em; }
+
+  /* ---------- TICKET / PRECIO ---------- */
+  .precio{ text-align:center; }
+  .ticket{
+    max-width:460px;
+    margin:0 auto;
+    background:linear-gradient(160deg, #1c1810, #131110);
+    border:1px solid var(--gold);
+    border-radius:6px;
+    position:relative;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.6);
+    text-align:left;
+  }
+  .ticket-top{ padding:34px 34px 26px; }
+  .ticket-top .eyebrow{ margin-bottom:10px; }
+  .ticket-course{ font-size:1.5rem; margin-bottom:6px; }
+  .ticket-meta{ color:var(--muted); font-size:0.88rem; }
+  .ticket-perf{
+    position:relative;
+    height:0;
+    border-top:2px dashed var(--bronze);
+    margin:0 8px;
+  }
+  .ticket-perf::before, .ticket-perf::after{
+    content:'';
+    position:absolute; top:-11px;
+    width:22px; height:22px;
+    background:var(--bg);
+    border-radius:50%;
+  }
+  .ticket-perf::before{ left:-19px; }
+  .ticket-perf::after{ right:-19px; }
+  .ticket-bottom{ padding:26px 34px 34px; }
+  .ticket-price-row{ display:flex; align-items:baseline; gap:10px; margin-bottom:20px; }
+  .ticket-price{ font-family:'Fraunces', serif; font-size:2.6rem; color:var(--gold-light); }
+  .ticket-price-currency{ color:var(--muted); font-size:0.9rem; }
+  .ticket-cupo{
+    display:flex; align-items:center; gap:8px;
+    color:var(--muted); font-size:0.82rem; margin-bottom:24px;
+  }
+  .ticket .btn-primary{ width:100%; justify-content:center; }
+  .folio{
+    position:absolute; top:20px; right:20px;
+    font-size:0.68rem; color:var(--muted); letter-spacing:0.05em;
+    writing-mode:vertical-rl;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-item{ border-bottom:1px solid var(--line); }
+  .faq-q{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:24px 0; cursor:pointer;
+    font-weight:600; font-size:1.02rem;
+  }
+  .faq-q .plus{ color:var(--gold); font-size:1.3rem; transition:transform .25s ease; flex-shrink:0; margin-left:20px; }
+  .faq-item.open .plus{ transform:rotate(45deg); }
+  .faq-a{
+    max-height:0; overflow:hidden; transition:max-height .3s ease;
+    color:var(--muted); font-size:0.95rem;
+  }
+  .faq-a-inner{ padding-bottom:24px; max-width:640px; }
+
+  /* ---------- FOOTER CTA ---------- */
+  .final-cta{
+    text-align:center;
+    background:radial-gradient(ellipse 70% 60% at 50% 100%, rgba(201,162,39,0.14), transparent);
+  }
+  .final-cta h2{ font-size:clamp(1.8rem,4vw,2.6rem); max-width:640px; margin:0 auto 20px; }
+  .final-cta p{ color:var(--muted); max-width:480px; margin:0 auto 36px; }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:40px 0;
+    text-align:center;
+    color:var(--muted);
+    font-size:0.82rem;
+  }
+  footer .brand{ margin-bottom:8px; font-size:1rem;}
+
+  /* reveal on scroll */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  @media (max-width:760px){
+    .pain .grid{ grid-template-columns:1fr; gap:32px; }
+    .testi-grid{ grid-template-columns:1fr; }
+    .incluye-grid{ grid-template-columns:1fr 1fr; }
+    section{ padding:64px 0; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">@alan<span>growth</span></div>
+    <a href="#ticket" class="nav-cta">Reservar mi lugar</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Curso Intensivo · Network Marketing Herbalife</span>
+    <h1>Deja de perseguir clientes.<br>Aprende a que <em>ellos te busquen</em>.</h1>
+    <p class="sub">7 días en vivo por Zoom para construir un sistema de ventas real: guiones, cierre de objeciones y duplicación — sin sonar a vendedor.</p>
+    <div class="hero-badges">
+      <span class="badge"><span class="dot"></span>Inicia <b>27 de julio</b></span>
+      <span class="badge"><span class="dot"></span>Cupo limitado a <b>25 personas</b></span>
+      <span class="badge"><span class="dot"></span><b>$1,500 MXN</b> · precio de lanzamiento</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#ticket" class="btn-primary">Apartar mi lugar →</a>
+      <a href="#agenda" class="btn-secondary">Ver el temario de 7 días</a>
+    </div>
+    <p class="hero-note">Transmisión en vivo por Zoom · Manual imprimible incluido · Grupo de WhatsApp del curso</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="wrap grid">
+    <blockquote class="reveal">"El error más caro en Herbalife: buscar clientes nuevos todo el tiempo, ignorando los que ya tienes."</blockquote>
+    <div class="copy reveal">
+      <p>El 80% del dinero está en tu lista actual. El problema no es tu producto ni tu esfuerzo — es que nunca tuviste un sistema para vender con guión, cerrar sin presión y hacer que tu equipo se duplique solo.</p>
+      <p>Este curso te da ese sistema, paso por paso, en 7 sesiones en vivo.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AGENDA -->
+<section id="agenda">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">El temario</span>
+      <h2>7 días, una progresión completa</h2>
+      <p>Cada sesión construye sobre la anterior — de la mentalidad al sistema de duplicación.</p>
+    </div>
+
+    <div class="agenda-list">
+      <div class="agenda-item reveal"><div class="agenda-num">01</div><div class="agenda-body"><h3>Mentalidad Profesional</h3><p>Por qué algunos ganan y otros no. La fórmula del crecimiento, amateur vs. profesional, y tu evaluación inicial de habilidades.</p></div></div>
+      <div class="agenda-item reveal"><div class="agenda-num">02</div><div class="agenda-body"><h3>Ventas con Guión</h3><p>Tu meta de ingresos en 5 días. Guión de venta general para productos Herbalife, con actividad práctica de 15 llamadas.</p></div></div>
+      <div class="agenda-item reveal"><div class="agenda-num">03</div><div class="agenda-body"><h3>Guiones para Citas de Negocio</h3><p>Guiones personalizados según el perfil de cada prospecto, para agendar citas con personas realmente abiertas a la oportunidad.</p></div></div>
+      <div class="agenda-item reveal"><div class="agenda-num">04</div><div class="agenda-body"><h3>Estructura de Presentación</h3><p>Cómo construir una presentación de negocio efectiva: qué quieres que la persona piense, sienta y haga.</p></div></div>
+      <div class="agenda-item reveal"><div class="agenda-num">05</div><div class="agenda-body"><h3>Cierre y Manejo de Objeciones</h3><p>Preguntas de cierre, cierre de doble opción, el "botón rojo" y cómo aislar la objeción real — con confianza, sin confrontación.</p></div></div>
+      <div class="agenda-item reveal"><div class="agenda-num">06</div><div class="agenda-body"><h3>Seguimiento Profesional</h3><p>Más resultados sin buscar nuevos prospectos. Los 4 tipos de seguimiento que de verdad fortalecen relaciones.</p></div></div>
+      <div class="agenda-item reveal"><div class="agenda-num">07</div><div class="agenda-body"><h3>Duplicación</h3><p>Identifica a tus corredores. Las 5 etapas para que tu equipo aprenda a hacerlo solo — y lo enseñe a otros.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- INCLUYE -->
+<section class="incluye">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Qué recibes</span>
+      <h2>Todo el material, listo para usar</h2>
+    </div>
+    <div class="incluye-grid reveal">
+      <div class="incluye-card"><span class="eyebrow">Presentación</span><h3>Diapositivas por día</h3><p>El material visual de cada una de las 7 sesiones.</p></div>
+      <div class="incluye-card"><span class="eyebrow">Manual</span><h3>Hoja de trabajo</h3><p>Actividades y reflexión para cada día del curso.</p></div>
+      <div class="incluye-card"><span class="eyebrow">Guiones</span><h3>Ventas y citas</h3><p>Los guiones exactos para llamadas y citas de negocio.</p></div>
+      <div class="incluye-card"><span class="eyebrow">Tracker</span><h3>Tabla de control</h3><p>Seguimiento de llamadas y resultados, día a día.</p></div>
+      <div class="incluye-card"><span class="eyebrow">Diagnóstico</span><h3>Evaluación inicial</h3><p>Mide tu punto de partida antes del Día 1.</p></div>
+      <div class="incluye-card"><span class="eyebrow">Checklist</span><h3>Compromiso</h3><p>Tu plan de mejora personal, por escrito.</p></div>
+      <div class="incluye-card"><span class="eyebrow">Práctica</span><h3>Role-play</h3><p>Ejercicios reales de cierre y manejo de objeciones.</p></div>
+      <div class="incluye-card"><span class="eyebrow">Plan final</span><h3>Duplicación</h3><p>Identifica y desarrolla a los corredores de tu equipo.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Resultados reales</span>
+      <h2>Lo que dicen quienes ya lo tomaron</h2>
+    </div>
+    <div class="testi-grid reveal">
+      <div class="testi-card">
+        <p class="testi-text">"En solo una semana pude agendar y tener ventas. Definitivamente me inscribiré al próximo curso."</p>
+        <p class="testi-name">— Zimri Góngora</p>
+      </div>
+      <div class="testi-card">
+        <p class="testi-text">[Espacio reservado para la frase real de Yuli — reemplázala con su testimonio textual.]</p>
+        <p class="testi-name">— Yuli N.</p>
+      </div>
+      <div class="testi-card">
+        <p class="testi-text">[Espacio reservado para la frase real de Alicia — reemplázala con su testimonio textual.]</p>
+        <p class="testi-name">— Alicia R.</p>
+      </div>
+      <div class="testi-card">
+        <p class="testi-text">[Espacio reservado para la frase real de José — reemplázala con su testimonio textual.]</p>
+        <p class="testi-name">— José H.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TICKET / PRECIO -->
+<section class="precio" id="ticket">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Tu acceso</span>
+      <h2>Aparta tu lugar</h2>
+      <p>Cupo limitado a 25 personas para mantener la calidad de la sesión en vivo.</p>
+    </div>
+
+    <div class="ticket reveal">
+      <span class="folio">FOLIO · CUPO LIMITADO 25</span>
+      <div class="ticket-top">
+        <span class="eyebrow">Curso Intensivo · 7 días · Zoom</span>
+        <div class="ticket-course display">Network Marketing Herbalife</div>
+        <div class="ticket-meta">Inicia domingo 27 de julio de 2026</div>
+      </div>
+      <div class="ticket-perf"></div>
+      <div class="ticket-bottom">
+        <div class="ticket-price-row">
+          <span class="ticket-price">$1,500</span>
+          <span class="ticket-price-currency">MXN · precio de lanzamiento</span>
+        </div>
+        <div class="ticket-cupo"><span class="dot"></span>Grupo de WhatsApp + manual imprimible incluidos</div>
+        <button class="btn-primary" onclick="reservarLugar()">Reservar mi lugar →</button>
+      </div>
+    </div>
+    <p class="hero-note" style="margin-top:22px;">Al confirmar tu pago recibirás el link del Zoom y acceso al grupo de WhatsApp del curso.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head reveal">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Antes de reservar</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>¿Cómo es la modalidad del curso?</span><span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Es 100% en vivo por Zoom, durante 7 días consecutivos. No es un curso grabado — participas y practicas en tiempo real con Alan.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>¿Qué pasa después de pagar?</span><span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Recibirás por WhatsApp el link del Zoom, el grupo del curso y el manual en PDF para imprimir, antes del primer día.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>¿Necesito experiencia previa en Herbalife?</span><span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">No. El curso está diseñado tanto para quien apenas empieza como para quien ya tiene red y quiere sistematizar sus ventas.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>¿Hay devoluciones?</span><span class="plus">+</span></div>
+        <div class="faq-a"><div class="faq-a-inner">[Define aquí tu política de reembolsos antes de publicar la página.]</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="wrap">
+    <h2 class="reveal">El sistema más poderoso no es la tecnología.</h2>
+    <p class="reveal">Es tu historia, tus resultados y la confianza que ya existe en tu red. Este curso te da el resto.</p>
+    <a href="#ticket" class="btn-primary reveal">Reservar mi lugar →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">@alan<span style="color:var(--gold)">growth</span></div>
+    <div>Mentalidad &amp; Libertad · Cuernavaca, México</div>
+  </div>
+</footer>
+
+<script>
+  // ============================================================
+  // CONFIGURACIÓN DE PAGO
+  // Mientras generas tu link de CLIP o Mercado Pago, el botón
+  // manda a la persona directo a tu WhatsApp con un mensaje
+  // pre-escrito para cerrar la venta manualmente.
+  //
+  // Cuando ya tengas tu link de pago (CLIP o Mercado Pago),
+  // pégalo en PAYMENT_LINK y el botón lo usará automáticamente.
+  // ============================================================
+  const WHATSAPP_NUMBER = "521XXXXXXXXXX"; // <-- reemplaza con tu número, formato 521 + 10 dígitos
+  const PAYMENT_LINK = null; // <-- ejemplo: "https://link.clip.mx/xxxxx" cuando lo tengas
+
+  function reservarLugar(){
+    if (PAYMENT_LINK){
+      window.open(PAYMENT_LINK, "_blank");
+    } else {
+      const msg = encodeURIComponent("Hola Alan, quiero apartar mi lugar en el Curso Intensivo del 27 de julio ($1,500 MXN). ¿Me ayudas con el pago?");
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
+    }
+  }
+
+  function toggleFaq(el){
+    const item = el.parentElement;
+    const answer = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o => {
+      o.classList.remove('open');
+      o.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if (!isOpen){
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  }
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
