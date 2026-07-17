@@ -540,7 +540,7 @@
     if (PAYMENT_LINK){
       window.open(PAYMENT_LINK, "_blank");
     } else {
-      const msg = encodeURIComponent("Hola Alan, quiero apartar mi lugar en el Curso Intensivo del 3 de agosto ($1,500 MXN). ¿Me ayudas con el pago?");
+      const msg = encodeURIComponent("Hola Alan! Vi tu Curso Intensivo del 3 de agosto y quiero apartar mi lugar. ¿Me compartes los datos para hacer el pago?");
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
     }
   }
